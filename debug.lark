@@ -1,0 +1,23 @@
+// For debugging error raised about `EQUAL` when lexer='basic'
+
+%import common._STRING_ESC_INNER
+%import common.SIGNED_INT       -> INT
+%import common.LETTER           -> C
+%import common.DIGIT            -> N
+%import common.WS
+%ignore WS
+
+C1 : "c1"
+C2 : "c2"
+
+COMP_OP : EQUAL | NOTEQUAL
+EQUAL : "="
+NOTEQUAL : "!="
+
+command : command1 | command2
+
+command1 : C1 predicate
+command2 : C2 EQUAL predicate
+
+predicate : operand COMP_OP operand
+operand : INT
