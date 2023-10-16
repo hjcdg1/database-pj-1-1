@@ -9,7 +9,7 @@ PROMPT_TEXT = 'DB_2016-10399'
 class SQLExecutor(Transformer):
     def execute(self, tree):
         """
-        Rename `transform` method for improving readabilit
+        Rename `transform` method for improving readability
         """
 
         self.transform(tree)
